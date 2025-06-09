@@ -1,0 +1,255 @@
+        -:    0:Source:C:/Users/maria/Desktop/Taller/Algoritmos I/TPImplementacion/tests/EJ02_posicionesVivasTEST.cpp
+        -:    0:Graph:C:\Users\maria\Desktop\Taller\Algoritmos I\TPImplementacion\cmake-build-debug\CMakeFiles\juegoDeLaVida.dir\tests\EJ02_posicionesVivasTEST.gcno
+        -:    0:Data:C:\Users\maria\Desktop\Taller\Algoritmos I\TPImplementacion\cmake-build-debug\CMakeFiles\juegoDeLaVida.dir\tests\EJ02_posicionesVivasTEST.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:#include "../ejercicios.h"
+        -:    2:#include "../auxiliares.h"
+        -:    3:#include "gtest/gtest.h"
+        -:    4:#include <algorithm>
+        -:    5:
+        -:    6:using namespace std;
+        -:    7:
+        8:    8:TEST(posicionesVivasTEST, toroideDiagonalVivas){
+        1:    8-block  0
+        1:    8-block  1
+        1:    8-block  2
+    %%%%%:    8-block  3
+    %%%%%:    8-block  4
+    %%%%%:    8-block  5
+        1:    8-block  6
+        1:    8-block  7
+        1:    8-block  8
+        1:    8-block  9
+        1:    8-block 10
+        1:    8-block 11
+        1:    8-block 12
+        -:    9:    toroide t = { 
+        -:   10:	{true, false, false},
+        -:   11:	{false, true, false},
+        -:   12:	{false, false, true},
+        -:   13:	{true, false, false},
+        -:   14:	{false, true, false},
+        8:   15:	{false, false, true}};
+        1:   15-block  0
+        1:   15-block  1
+        1:   15-block  2
+        1:   15-block  3
+        1:   15-block  4
+        1:   15-block  5
+        1:   15-block  6
+        1:   15-block  7
+        7:   15-block  8
+        6:   15-block  9
+        1:   15-block 10
+    %%%%%:   15-block 11
+    %%%%%:   15-block 12
+    %%%%%:   15-block 13
+    %%%%%:   15-block 14
+    %%%%%:   15-block 15
+    %%%%%:   15-block 16
+    %%%%%:   15-block 17
+    %%%%%:   15-block 18
+    %%%%%:   15-block 19
+    %%%%%:   15-block 20
+    %%%%%:   15-block 21
+    %%%%%:   15-block 22
+        -:   16:
+        2:   17:    vector<posicion> vivas = {mp(0,0), mp(1,1), mp(2,2), mp(3, 0), mp(4, 1), mp(5, 2)};
+        1:   17-block  0
+        1:   17-block  1
+        1:   17-block  2
+        1:   17-block  3
+        1:   17-block  4
+        1:   17-block  5
+        1:   17-block  6
+    %%%%%:   17-block  7
+    %%%%%:   17-block  8
+    %%%%%:   17-block  9
+        2:   18:    vector<posicion> res = posicionesVivas(t);
+    %%%%%:   18-block  0
+        1:   19:    EXPECT_EQ(ordenar(vivas), ordenar(res));
+        1:   19-block  0
+        1:   19-block  1
+        1:   19-block  2
+        1:   19-block  3
+    $$$$$:   19-block  4
+    $$$$$:   19-block  5
+    $$$$$:   19-block  6
+    $$$$$:   19-block  7
+    $$$$$:   19-block  8
+        1:   19-block  9
+    %%%%%:   19-block 10
+    %%%%%:   19-block 11
+    %%%%%:   19-block 12
+    %%%%%:   19-block 13
+    %%%%%:   19-block 14
+        1:   20:}
+    %%%%%:   20-block  0
+        -:   21:
+        8:   22:TEST(posicionesVivasTEST, toroideSinVivas){
+        1:   22-block  0
+        1:   22-block  1
+        1:   22-block  2
+    %%%%%:   22-block  3
+    %%%%%:   22-block  4
+    %%%%%:   22-block  5
+        1:   22-block  6
+        1:   22-block  7
+        1:   22-block  8
+        1:   22-block  9
+        1:   22-block 10
+        1:   22-block 11
+        1:   22-block 12
+        -:   23:    toroide t = {
+        -:   24:            {false, false, false},
+        -:   25:            {false, false, false},
+        -:   26:            {false, false, false},
+        -:   27:            {false, false, false},
+        -:   28:            {false, false, false},
+        8:   29:            {false, false, false}};
+        1:   29-block  0
+        1:   29-block  1
+        1:   29-block  2
+        1:   29-block  3
+        1:   29-block  4
+        1:   29-block  5
+        1:   29-block  6
+        1:   29-block  7
+        7:   29-block  8
+        6:   29-block  9
+        1:   29-block 10
+    %%%%%:   29-block 11
+    %%%%%:   29-block 12
+    %%%%%:   29-block 13
+    %%%%%:   29-block 14
+    %%%%%:   29-block 15
+    %%%%%:   29-block 16
+    %%%%%:   29-block 17
+    %%%%%:   29-block 18
+    %%%%%:   29-block 19
+    %%%%%:   29-block 20
+    %%%%%:   29-block 21
+    %%%%%:   29-block 22
+        -:   30:
+        2:   31:    vector<posicion> vivas = {};
+    %%%%%:   31-block  0
+        2:   32:    vector<posicion> res = posicionesVivas(t);
+    %%%%%:   32-block  0
+        1:   33:    EXPECT_EQ(ordenar(vivas), ordenar(res));
+        1:   33-block  0
+        1:   33-block  1
+        1:   33-block  2
+        1:   33-block  3
+    $$$$$:   33-block  4
+    $$$$$:   33-block  5
+    $$$$$:   33-block  6
+    $$$$$:   33-block  7
+    $$$$$:   33-block  8
+        1:   33-block  9
+    %%%%%:   33-block 10
+    %%%%%:   33-block 11
+    %%%%%:   33-block 12
+    %%%%%:   33-block 13
+    %%%%%:   33-block 14
+        1:   34:}
+    %%%%%:   34-block  0
+        -:   35:
+        8:   36:TEST(posicionesVivasTEST, todosVivos){
+        1:   36-block  0
+        1:   36-block  1
+        1:   36-block  2
+    %%%%%:   36-block  3
+    %%%%%:   36-block  4
+    %%%%%:   36-block  5
+        1:   36-block  6
+        1:   36-block  7
+        1:   36-block  8
+        1:   36-block  9
+        1:   36-block 10
+        1:   36-block 11
+        1:   36-block 12
+        -:   37:    toroide t = {
+        -:   38:            {true, true, true, true},
+        -:   39:            {true, true, true, true},
+        -:   40:            {true, true, true, true},
+        -:   41:            {true, true, true, true},
+        7:   42:            {true, true, true, true}};
+        1:   42-block  0
+        1:   42-block  1
+        1:   42-block  2
+        1:   42-block  3
+        1:   42-block  4
+        1:   42-block  5
+        1:   42-block  6
+        6:   42-block  7
+        5:   42-block  8
+        1:   42-block  9
+    %%%%%:   42-block 10
+    %%%%%:   42-block 11
+    %%%%%:   42-block 12
+    %%%%%:   42-block 13
+    %%%%%:   42-block 14
+    %%%%%:   42-block 15
+    %%%%%:   42-block 16
+    %%%%%:   42-block 17
+    %%%%%:   42-block 18
+    %%%%%:   42-block 19
+    %%%%%:   42-block 20
+        -:   43:
+        -:   44:    vector<posicion> vivas = {mp(0,0),mp(0,1),mp(0,2),mp(0,3),
+        -:   45:                              mp(1,0),mp(1,1),mp(1,2),mp(1,3),
+        -:   46:                              mp(2,0),mp(2,1),mp(2,2),mp(2,3),
+        -:   47:                              mp(3,0),mp(3,1),mp(3,2),mp(3,3),
+        2:   48:                              mp(4,0),mp(4,1),mp(4,2),mp(4,3)};
+        1:   48-block  0
+        1:   48-block  1
+        1:   48-block  2
+        1:   48-block  3
+        1:   48-block  4
+        1:   48-block  5
+        1:   48-block  6
+        1:   48-block  7
+        1:   48-block  8
+        1:   48-block  9
+        1:   48-block 10
+        1:   48-block 11
+        1:   48-block 12
+        1:   48-block 13
+        1:   48-block 14
+        1:   48-block 15
+        1:   48-block 16
+        1:   48-block 17
+        1:   48-block 18
+        1:   48-block 19
+        1:   48-block 20
+    %%%%%:   48-block 21
+    %%%%%:   48-block 22
+    %%%%%:   48-block 23
+        2:   49:    vector<posicion> res = posicionesVivas(t);
+    %%%%%:   49-block  0
+        1:   50:    EXPECT_EQ(ordenar(vivas), ordenar(res));
+        1:   50-block  0
+        1:   50-block  1
+        1:   50-block  2
+        1:   50-block  3
+    $$$$$:   50-block  4
+    $$$$$:   50-block  5
+    $$$$$:   50-block  6
+    $$$$$:   50-block  7
+    $$$$$:   50-block  8
+        1:   50-block  9
+    %%%%%:   50-block 10
+    %%%%%:   50-block 11
+    %%%%%:   50-block 12
+    %%%%%:   50-block 13
+    %%%%%:   50-block 14
+        5:   51:}
+        1:   51-block  0
+        1:   51-block  1
+        1:   51-block  2
+        1:   51-block  3
+        1:   51-block  4
+        1:   51-block  5
+    %%%%%:   51-block  6
+        -:   52:

@@ -1,0 +1,268 @@
+        -:    0:Source:C:/Users/maria/Desktop/Taller/Algoritmos I/TPImplementacion/tests/EJ07_esPeriodicoTEST.cpp
+        -:    0:Graph:C:\Users\maria\Desktop\Taller\Algoritmos I\TPImplementacion\cmake-build-debug\CMakeFiles\juegoDeLaVida.dir\tests\EJ07_esPeriodicoTEST.gcno
+        -:    0:Data:C:\Users\maria\Desktop\Taller\Algoritmos I\TPImplementacion\cmake-build-debug\CMakeFiles\juegoDeLaVida.dir\tests\EJ07_esPeriodicoTEST.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:#include "../ejercicios.h"
+        -:    2:#include "gtest/gtest.h"
+        -:    3:#include <algorithm>
+        -:    4:
+        -:    5:using namespace std;
+        -:    6:
+        8:    7:TEST(esPeriodicoTEST, toroideHorizontalPeriodico2){
+        1:    7-block  0
+        1:    7-block  1
+        1:    7-block  2
+    %%%%%:    7-block  3
+    %%%%%:    7-block  4
+    %%%%%:    7-block  5
+        1:    7-block  6
+        1:    7-block  7
+        1:    7-block  8
+        1:    7-block  9
+        1:    7-block 10
+        1:    7-block 11
+        1:    7-block 12
+        -:    8:    toroide t = { 
+        -:    9:                  {false, false, false, false, false},
+        -:   10:                  {false, false, false, false, false},
+        -:   11:                  {false, true,  true,  true,  false},
+        -:   12:                  {false, false, false, false, false},
+        7:   13:                  {false, false, false, false, false}};
+        1:   13-block  0
+        1:   13-block  1
+        1:   13-block  2
+        1:   13-block  3
+        1:   13-block  4
+        1:   13-block  5
+        1:   13-block  6
+        6:   13-block  7
+        5:   13-block  8
+        1:   13-block  9
+    %%%%%:   13-block 10
+    %%%%%:   13-block 11
+    %%%%%:   13-block 12
+    %%%%%:   13-block 13
+    %%%%%:   13-block 14
+    %%%%%:   13-block 15
+    %%%%%:   13-block 16
+    %%%%%:   13-block 17
+    %%%%%:   13-block 18
+    %%%%%:   13-block 19
+        -:   14:    int p;
+        1:   15:    bool res = esPeriodico(t, p);
+        1:   16:    EXPECT_TRUE(res);
+        1:   16-block  0
+        1:   16-block  1
+    $$$$$:   16-block  2
+    $$$$$:   16-block  3
+    $$$$$:   16-block  4
+    $$$$$:   16-block  5
+    $$$$$:   16-block  6
+        1:   16-block  7
+    %%%%%:   16-block  8
+    %%%%%:   16-block  9
+    %%%%%:   16-block 10
+    %%%%%:   16-block 11
+    %%%%%:   16-block 12
+        1:   17:    EXPECT_EQ(p, 2);
+        1:   17-block  0
+    $$$$$:   17-block  1
+    $$$$$:   17-block  2
+    $$$$$:   17-block  3
+    $$$$$:   17-block  4
+    $$$$$:   17-block  5
+        1:   17-block  6
+    %%%%%:   17-block  7
+    %%%%%:   17-block  8
+    %%%%%:   17-block  9
+    %%%%%:   17-block 10
+    %%%%%:   17-block 11
+        1:   18:}
+    %%%%%:   18-block  0
+        -:   19:
+        8:   20:TEST(esPeriodicoTEST, sarmientoEnHoraPico){
+        1:   20-block  0
+        1:   20-block  1
+        1:   20-block  2
+    %%%%%:   20-block  3
+    %%%%%:   20-block  4
+    %%%%%:   20-block  5
+        1:   20-block  6
+        1:   20-block  7
+        1:   20-block  8
+        1:   20-block  9
+        1:   20-block 10
+        1:   20-block 11
+        1:   20-block 12
+        -:   21:    toroide t = {
+        -:   22:            {true, true, true, true, true,  true, true, true, true},
+        -:   23:            {true, true, true, true, true,  true, true, true, true},
+        -:   24:            {true, true, true, true, true,  true, true, true, true},
+        -:   25:            {true, true, true, true, true,  true, true, true, true},
+        7:   26:            {true, true, true, true, false, true, true, true, true}};
+        1:   26-block  0
+        1:   26-block  1
+        1:   26-block  2
+        1:   26-block  3
+        1:   26-block  4
+        1:   26-block  5
+        1:   26-block  6
+        6:   26-block  7
+        5:   26-block  8
+        1:   26-block  9
+    %%%%%:   26-block 10
+    %%%%%:   26-block 11
+    %%%%%:   26-block 12
+    %%%%%:   26-block 13
+    %%%%%:   26-block 14
+    %%%%%:   26-block 15
+    %%%%%:   26-block 16
+    %%%%%:   26-block 17
+    %%%%%:   26-block 18
+    %%%%%:   26-block 19
+        -:   27:    int p;
+        1:   28:    bool res = esPeriodico(t, p);
+        1:   29:    EXPECT_FALSE(res);
+        1:   29-block  0
+        1:   29-block  1
+    $$$$$:   29-block  2
+    $$$$$:   29-block  3
+    $$$$$:   29-block  4
+    $$$$$:   29-block  5
+    $$$$$:   29-block  6
+        1:   29-block  7
+    %%%%%:   29-block  8
+    %%%%%:   29-block  9
+    %%%%%:   29-block 10
+    %%%%%:   29-block 11
+    %%%%%:   29-block 12
+    %%%%%:   29-block 13
+        1:   30:}
+    %%%%%:   30-block  0
+        -:   31:
+        8:   32:TEST(esPeriodicoTEST, miniPeriodico){
+        1:   32-block  0
+        1:   32-block  1
+        1:   32-block  2
+    %%%%%:   32-block  3
+    %%%%%:   32-block  4
+    %%%%%:   32-block  5
+        1:   32-block  6
+        1:   32-block  7
+        1:   32-block  8
+        1:   32-block  9
+        1:   32-block 10
+        1:   32-block 11
+        1:   32-block 12
+        -:   33:    toroide t = {
+        -:   34:            {true, false, true },
+        -:   35:            {false, true, false},
+        5:   36:            {false, true, false}};
+        1:   36-block  0
+        1:   36-block  1
+        1:   36-block  2
+        1:   36-block  3
+        1:   36-block  4
+        4:   36-block  5
+        3:   36-block  6
+        1:   36-block  7
+    %%%%%:   36-block  8
+    %%%%%:   36-block  9
+    %%%%%:   36-block 10
+    %%%%%:   36-block 11
+    %%%%%:   36-block 12
+    %%%%%:   36-block 13
+    %%%%%:   36-block 14
+    %%%%%:   36-block 15
+        -:   37:    int p;
+        1:   38:    bool res = esPeriodico(t, p);
+        1:   39:    EXPECT_TRUE(res);
+        1:   39-block  0
+        1:   39-block  1
+    $$$$$:   39-block  2
+    $$$$$:   39-block  3
+    $$$$$:   39-block  4
+    $$$$$:   39-block  5
+    $$$$$:   39-block  6
+        1:   39-block  7
+    %%%%%:   39-block  8
+    %%%%%:   39-block  9
+    %%%%%:   39-block 10
+    %%%%%:   39-block 11
+    %%%%%:   39-block 12
+        1:   40:    EXPECT_EQ(p, 1);
+        1:   40-block  0
+    $$$$$:   40-block  1
+    $$$$$:   40-block  2
+    $$$$$:   40-block  3
+    $$$$$:   40-block  4
+    $$$$$:   40-block  5
+        1:   40-block  6
+    %%%%%:   40-block  7
+    %%%%%:   40-block  8
+    %%%%%:   40-block  9
+    %%%%%:   40-block 10
+    %%%%%:   40-block 11
+        1:   41:}
+    %%%%%:   41-block  0
+        -:   42:
+        8:   43:TEST(esPeriodicoTEST, miniNoPeriodico){
+        1:   43-block  0
+        1:   43-block  1
+        1:   43-block  2
+    %%%%%:   43-block  3
+    %%%%%:   43-block  4
+    %%%%%:   43-block  5
+        1:   43-block  6
+        1:   43-block  7
+        1:   43-block  8
+        1:   43-block  9
+        1:   43-block 10
+        1:   43-block 11
+        1:   43-block 12
+        -:   44:    toroide t = {
+        -:   45:            {true,  true, true },
+        -:   46:            {false, true, false},
+        5:   47:            {false, true, false}};
+        1:   47-block  0
+        1:   47-block  1
+        1:   47-block  2
+        1:   47-block  3
+        1:   47-block  4
+        4:   47-block  5
+        3:   47-block  6
+        1:   47-block  7
+    %%%%%:   47-block  8
+    %%%%%:   47-block  9
+    %%%%%:   47-block 10
+    %%%%%:   47-block 11
+    %%%%%:   47-block 12
+    %%%%%:   47-block 13
+    %%%%%:   47-block 14
+    %%%%%:   47-block 15
+        -:   48:    int p;
+        1:   49:    bool res = esPeriodico(t, p);
+        1:   50:    EXPECT_FALSE(res);
+        1:   50-block  0
+        1:   50-block  1
+    $$$$$:   50-block  2
+    $$$$$:   50-block  3
+    $$$$$:   50-block  4
+    $$$$$:   50-block  5
+    $$$$$:   50-block  6
+        1:   50-block  7
+    %%%%%:   50-block  8
+    %%%%%:   50-block  9
+    %%%%%:   50-block 10
+    %%%%%:   50-block 11
+    %%%%%:   50-block 12
+    %%%%%:   50-block 13
+        5:   51:}
+        1:   51-block  0
+        1:   51-block  1
+        1:   51-block  2
+        1:   51-block  3
+        1:   51-block  4
+        1:   51-block  5
+    %%%%%:   51-block  6

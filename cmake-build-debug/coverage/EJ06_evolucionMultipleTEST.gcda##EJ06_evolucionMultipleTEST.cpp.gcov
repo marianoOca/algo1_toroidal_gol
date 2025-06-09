@@ -1,0 +1,232 @@
+        -:    0:Source:C:/Users/maria/Desktop/Taller/Algoritmos I/TPImplementacion/tests/EJ06_evolucionMultipleTEST.cpp
+        -:    0:Graph:C:\Users\maria\Desktop\Taller\Algoritmos I\TPImplementacion\cmake-build-debug\CMakeFiles\juegoDeLaVida.dir\tests\EJ06_evolucionMultipleTEST.gcno
+        -:    0:Data:C:\Users\maria\Desktop\Taller\Algoritmos I\TPImplementacion\cmake-build-debug\CMakeFiles\juegoDeLaVida.dir\tests\EJ06_evolucionMultipleTEST.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:#include "../ejercicios.h"
+        -:    2:#include "gtest/gtest.h"
+        -:    3:#include <algorithm>
+        -:    4:
+        -:    5:using namespace std;
+        -:    6:
+        8:    7:TEST(evolucionMultipleTEST, toroideDiagonalTresPorTresUnPaso){
+        1:    7-block  0
+        1:    7-block  1
+        1:    7-block  2
+    %%%%%:    7-block  3
+    %%%%%:    7-block  4
+    %%%%%:    7-block  5
+        1:    7-block  6
+        1:    7-block  7
+        1:    7-block  8
+        1:    7-block  9
+        1:    7-block 10
+        1:    7-block 11
+        1:    7-block 12
+        -:    8:    toroide t = { {true, false, false},
+        -:    9:                  {false, true, false},
+        5:   10:                  {false, false, true}};
+        1:   10-block  0
+        1:   10-block  1
+        1:   10-block  2
+        1:   10-block  3
+        1:   10-block  4
+        4:   10-block  5
+        3:   10-block  6
+        1:   10-block  7
+    %%%%%:   10-block  8
+    %%%%%:   10-block  9
+    %%%%%:   10-block 10
+    %%%%%:   10-block 11
+    %%%%%:   10-block 12
+    %%%%%:   10-block 13
+    %%%%%:   10-block 14
+    %%%%%:   10-block 15
+    %%%%%:   10-block 16
+        -:   11:
+        -:   12:    toroide evo_t = { {true, true, true},
+        -:   13:                      {true, true, true},
+        5:   14:                      {true, true, true}};
+        1:   14-block  0
+        1:   14-block  1
+        1:   14-block  2
+        1:   14-block  3
+        4:   14-block  4
+        3:   14-block  5
+        1:   14-block  6
+    %%%%%:   14-block  7
+    %%%%%:   14-block  8
+    %%%%%:   14-block  9
+    %%%%%:   14-block 10
+    %%%%%:   14-block 11
+    %%%%%:   14-block 12
+    %%%%%:   14-block 13
+    %%%%%:   14-block 14
+        -:   15:
+        2:   16:    toroide res = evolucionMultiple(t, 1);
+    %%%%%:   16-block  0
+        1:   17:    EXPECT_EQ(res, evo_t);
+        1:   17-block  0
+        1:   17-block  1
+    $$$$$:   17-block  2
+    $$$$$:   17-block  3
+    $$$$$:   17-block  4
+    $$$$$:   17-block  5
+    $$$$$:   17-block  6
+        1:   17-block  7
+    %%%%%:   17-block  8
+    %%%%%:   17-block  9
+    %%%%%:   17-block 10
+    %%%%%:   17-block 11
+        1:   18:}
+    %%%%%:   18-block  0
+        -:   19:
+        8:   20:TEST(evolucionMultipleTEST, toroideDiagonalTresPorTresDosPasos){
+        1:   20-block  0
+        1:   20-block  1
+        1:   20-block  2
+    %%%%%:   20-block  3
+    %%%%%:   20-block  4
+    %%%%%:   20-block  5
+        1:   20-block  6
+        1:   20-block  7
+        1:   20-block  8
+        1:   20-block  9
+        1:   20-block 10
+        1:   20-block 11
+        1:   20-block 12
+        -:   21:toroide t = { {true,  false, false},
+        -:   22:              {false, true,  false},
+        5:   23:              {false, false, true}};
+        1:   23-block  0
+        1:   23-block  1
+        1:   23-block  2
+        1:   23-block  3
+        1:   23-block  4
+        4:   23-block  5
+        3:   23-block  6
+        1:   23-block  7
+    %%%%%:   23-block  8
+    %%%%%:   23-block  9
+    %%%%%:   23-block 10
+    %%%%%:   23-block 11
+    %%%%%:   23-block 12
+    %%%%%:   23-block 13
+    %%%%%:   23-block 14
+    %%%%%:   23-block 15
+    %%%%%:   23-block 16
+        -:   24:
+        -:   25:toroide evo_t = { {false, false, false},
+        -:   26:                  {false, false, false},
+        5:   27:                  {false, false, false}};
+        1:   27-block  0
+        1:   27-block  1
+        1:   27-block  2
+        1:   27-block  3
+        4:   27-block  4
+        3:   27-block  5
+        1:   27-block  6
+    %%%%%:   27-block  7
+    %%%%%:   27-block  8
+    %%%%%:   27-block  9
+    %%%%%:   27-block 10
+    %%%%%:   27-block 11
+    %%%%%:   27-block 12
+    %%%%%:   27-block 13
+    %%%%%:   27-block 14
+        -:   28:
+        2:   29:toroide res = evolucionMultiple(t, 2);
+    %%%%%:   29-block  0
+        1:   30:EXPECT_EQ(res, evo_t);
+        1:   30-block  0
+        1:   30-block  1
+    $$$$$:   30-block  2
+    $$$$$:   30-block  3
+    $$$$$:   30-block  4
+    $$$$$:   30-block  5
+    $$$$$:   30-block  6
+        1:   30-block  7
+    %%%%%:   30-block  8
+    %%%%%:   30-block  9
+    %%%%%:   30-block 10
+    %%%%%:   30-block 11
+        1:   31:}
+    %%%%%:   31-block  0
+        -:   32:
+        8:   33:TEST(evolucionMultipleTEST, toroideDiagonalTresPorTresTresPasos){
+        1:   33-block  0
+        1:   33-block  1
+        1:   33-block  2
+    %%%%%:   33-block  3
+    %%%%%:   33-block  4
+    %%%%%:   33-block  5
+        1:   33-block  6
+        1:   33-block  7
+        1:   33-block  8
+        1:   33-block  9
+        1:   33-block 10
+        1:   33-block 11
+        1:   33-block 12
+        -:   34:    toroide t = { {true,  false, false},
+        -:   35:                  {false, true,  false},
+        5:   36:                  {false, false, true}};
+        1:   36-block  0
+        1:   36-block  1
+        1:   36-block  2
+        1:   36-block  3
+        1:   36-block  4
+        4:   36-block  5
+        3:   36-block  6
+        1:   36-block  7
+    %%%%%:   36-block  8
+    %%%%%:   36-block  9
+    %%%%%:   36-block 10
+    %%%%%:   36-block 11
+    %%%%%:   36-block 12
+    %%%%%:   36-block 13
+    %%%%%:   36-block 14
+    %%%%%:   36-block 15
+    %%%%%:   36-block 16
+        -:   37:
+        -:   38:    toroide evo_t = { {false, false, false},
+        -:   39:                      {false, false, false},
+        5:   40:                      {false, false, false}};
+        1:   40-block  0
+        1:   40-block  1
+        1:   40-block  2
+        1:   40-block  3
+        4:   40-block  4
+        3:   40-block  5
+        1:   40-block  6
+    %%%%%:   40-block  7
+    %%%%%:   40-block  8
+    %%%%%:   40-block  9
+    %%%%%:   40-block 10
+    %%%%%:   40-block 11
+    %%%%%:   40-block 12
+    %%%%%:   40-block 13
+    %%%%%:   40-block 14
+        -:   41:
+        2:   42:    toroide res = evolucionMultiple(t, 3);
+    %%%%%:   42-block  0
+        1:   43:    EXPECT_EQ(res, evo_t);
+        1:   43-block  0
+        1:   43-block  1
+    $$$$$:   43-block  2
+    $$$$$:   43-block  3
+    $$$$$:   43-block  4
+    $$$$$:   43-block  5
+    $$$$$:   43-block  6
+        1:   43-block  7
+    %%%%%:   43-block  8
+    %%%%%:   43-block  9
+    %%%%%:   43-block 10
+    %%%%%:   43-block 11
+        5:   44:}
+        1:   44-block  0
+        1:   44-block  1
+        1:   44-block  2
+        1:   44-block  3
+        1:   44-block  4
+        1:   44-block  5
+    %%%%%:   44-block  6

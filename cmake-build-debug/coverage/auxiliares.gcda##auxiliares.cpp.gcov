@@ -1,0 +1,334 @@
+        -:    0:Source:C:/Users/maria/Desktop/Taller/Algoritmos I/TPImplementacion/auxiliares.cpp
+        -:    0:Graph:C:\Users\maria\Desktop\Taller\Algoritmos I\TPImplementacion\cmake-build-debug\CMakeFiles\juegoDeLaVida.dir\auxiliares.gcno
+        -:    0:Data:C:\Users\maria\Desktop\Taller\Algoritmos I\TPImplementacion\cmake-build-debug\CMakeFiles\juegoDeLaVida.dir\auxiliares.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:#include "definiciones.h"
+        -:    2:#include "auxiliares.h"
+        -:    3:#include "ejercicios.h"
+        -:    4:
+        -:    5:using namespace std;
+        -:    6:
+    47415:    7:pair<int,int> mp(int a, int b) {
+    47415:    7-block  0
+    47415:    8:    return make_pair(a, b);
+    47415:    8-block  0
+        -:    9:}
+        -:   10:
+        6:   11:vector<posicion> ordenar(vector<posicion> &v) {
+        6:   11-block  0
+        6:   12:    sort(v.begin(), v.end());
+        6:   12-block  0
+        6:   13:    return v;
+        -:   14:}
+        -:   15:
+        -:   16://Ejercicio 01
+   135132:   17:int filas(vector<vector<bool>> const &t){ return t.size(); }
+    67566:   17-block  0
+    67566:   17-block  1
+        -:   18:
+    64086:   19:int columnas(vector<vector<bool>> const &t){
+    64086:   19-block  0
+    64086:   20:    int largoCol = t.size();
+    64086:   20-block  0
+    64086:   21:    if (largoCol != 0) return t[0].size();
+    64086:   21-block  0
+    #####:   22:    return 0;
+    $$$$$:   22-block  0
+        -:   23:}
+        -:   24:
+        -:   25://Ejercicio 03
+      121:   26:int cantidadVivas(toroide const &t){
+      121:   26-block  0
+      121:   27:    int largoCol = t.size(), largoFil = t[0].size();
+      121:   27-block  0
+      121:   28:    int vivas=0;
+        -:   29:
+      629:   30:    for(int i = 0 ; i < largoCol ; i++){
+      629:   30-block  0
+      508:   30-block  1
+     3520:   31:        for(int j = 0 ; j < largoFil ; j++){
+      508:   31-block  0
+     3520:   31-block  1
+     3012:   31-block  2
+     3012:   32:            if (t[i][j] == true) vivas++;
+     3012:   32-block  0
+      679:   32-block  1
+        -:   33:        }
+        -:   34:    }
+        -:   35:
+      121:   36:    return vivas;
+      121:   36-block  0
+        -:   37:}
+        -:   38:
+        -:   39://Ejercicio 04
+    53634:   40:int nuevaF(toroide const &t, int f){
+    53634:   40-block  0
+    57213:   41:    while ( f < 0) f += filas(t);
+    57213:   41-block  0
+     3579:   41-block  1
+    58606:   42:    while ( f > filas(t) - 1) f -= filas(t);
+    58606:   42-block  0
+     4972:   42-block  1
+    53634:   43:    return f;
+    53634:   43-block  0
+        -:   44:}
+        -:   45:
+    53634:   46:int nuevaC(toroide const &t, int c){
+    53634:   46-block  0
+    56091:   47:    while ( c < 0) c += columnas(t);
+    56091:   47-block  0
+     2457:   47-block  1
+    57427:   48:    while ( c > columnas(t) - 1) c -= columnas(t);
+    57427:   48-block  0
+     3793:   48-block  1
+    53634:   49:    return c;
+    53634:   49-block  0
+        -:   50:}
+        -:   51:
+    50126:   52:bool estaVivo(toroide const &t, posicion x){
+    50126:   52-block  0
+    50126:   53:    return t[ nuevaF(t, get<0>(x) ) ][ nuevaC(t, get<1>(x) ) ];
+    50126:   53-block  0
+        -:   54:}
+        -:   55:
+     4961:   56:int cantVecinosVivos(toroide const &t, posicion x){
+     4961:   56-block  0
+     4961:   57:    int vivos = 0;
+    19844:   58:    for(int i = get<0>(x)-1 ; i <= get<0>(x)+1 ; i++){
+     4961:   58-block  0
+    19844:   58-block  1
+    14883:   58-block  2
+    59532:   59:        for(int j = get<1>(x)-1 ; j <= get<1>(x)+1 ; j++){
+    14883:   59-block  0
+    59532:   59-block  1
+    44649:   59-block  2
+    44649:   60:            if( estaVivo(t, mp(i, j))  ) vivos ++;
+    44649:   60-block  0
+    11919:   60-block  1
+        -:   61:        }
+        -:   62:    }
+     4961:   63:    if(estaVivo(t, x)) vivos--;
+     4961:   63-block  0
+     1390:   63-block  1
+        -:   64:
+     4961:   65:    return vivos;
+     4961:   65-block  0
+        -:   66:}
+        -:   67:
+        -:   68://Ejercicio 07
+      193:   69:bool sonIguales(toroide const &t0,toroide const &t1){
+      193:   69-block  0
+      193:   70:    if( columnas(t0) != columnas(t1) || filas(t0) != filas(t1) ) return false;
+      193:   70-block  0
+      193:   70-block  1
+    $$$$$:   70-block  2
+      193:   70-block  3
+      193:   70-block  4
+    $$$$$:   70-block  5
+      193:   71:    bool res = true;
+        -:   72:
+      975:   73:    for(int i = 0 ; i < t0.size() ; i++) {
+      193:   73-block  0
+      975:   73-block  1
+      782:   73-block  2
+     5106:   74:        for(int j = 0 ; j < t0[i].size() ; j++) {
+      782:   74-block  0
+     5106:   74-block  1
+     4324:   75:            res &=  t0[i][j] == t1[i][j];
+     4324:   75-block  0
+        -:   76:        }
+        -:   77:    }
+      193:   78:    return res;
+      193:   78-block  0
+        -:   79:}
+        -:   80:
+      117:   81:bool toroideVivo(toroide const &t){
+      117:   81-block  0
+      117:   82:    return cantidadVivas(t) >= 1;
+      117:   82-block  0
+        -:   83:}
+        -:   84:
+        -:   85://Ejercicio 09
+        2:   86:vector<int> cuantoTardanEnMorirCadaUno(vector <toroide> const &ts) {
+        2:   86-block  0
+        2:   87:    int largoVector = ts.size();
+        2:   87-block  0
+        2:   88:    if (largoVector == 0) return {-1};
+    $$$$$:   88-block  0
+    $$$$$:   88-block  1
+    %%%%%:   88-block  2
+        -:   89:
+        4:   90:    vector<int> v {};
+        2:   90-block  0
+        2:   90-block  1
+        2:   90-block  2
+    %%%%%:   90-block  3
+        2:   91:    v.reserve(largoVector);
+        -:   92:
+        8:   93:    for(int i = 0 ; i < largoVector ; i++){
+        2:   93-block  0
+        8:   93-block  1
+        6:   93-block  2
+        6:   94:        v.push_back(ticksHastaMorir(ts[i]));
+        6:   94-block  0
+        6:   94-block  1
+    %%%%%:   94-block  2
+        -:   95:    }
+        2:   96:    return v;
+        2:   96-block  0
+        -:   97:}
+        -:   98:
+        6:   99:int ticksHastaMorir( toroide const &t){
+        6:   99-block  0
+        6:  100:    if ( !toroideVivo(t) ) return 0;
+        6:  100-block  0
+        6:  100-block  1
+        1:  100-block  2
+        -:  101:
+       11:  102:    toroide t1 = evolucionMultiple(t, 1);
+        5:  102-block  0
+        5:  102-block  1
+        6:  102-block  2
+        6:  102-block  3
+    %%%%%:  102-block  4
+        5:  103:    int tiks = 1;
+        5:  103-block  0
+        -:  104:
+        7:  105:    while( !sonIguales(t, t1) && toroideVivo(t1)){
+        7:  105-block  0
+        7:  105-block  1
+        7:  105-block  2
+        7:  105-block  3
+        2:  105-block  4
+        5:  105-block  5
+        7:  105-block  6
+        2:  106:        t1 = evolucionMultiple(t1, 1);
+        2:  106-block  0
+        2:  106-block  1
+        2:  107:        tiks++;
+        -:  108:    }
+        5:  109:    if( sonIguales(t, t1) ) return (-1); //si se cumple son periódicos
+        5:  109-block  0
+        5:  109-block  1
+    $$$$$:  109-block  2
+        5:  110:    return tiks;
+        5:  110-block  0
+        -:  111:}
+        -:  112:
+        2:  113:int indiceDelMayor(vector<int> v){
+        2:  113-block  0
+        2:  114:    int largoVec = v.size();
+        2:  114-block  0
+        2:  115:    if (largoVec == 0) return (-1);
+    $$$$$:  115-block  0
+        -:  116:
+        2:  117:    int m = 0;
+        6:  118:    for(int i = 1 ; i < largoVec ; i++){
+        2:  118-block  0
+        6:  118-block  1
+        4:  118-block  2
+        4:  119:        if( v[i] > v[m] ) m = i;
+        4:  119-block  0
+        1:  119-block  1
+        -:  120:    }
+        2:  121:    return m;
+        2:  121-block  0
+        -:  122:}
+        -:  123:
+        -:  124:
+        -:  125://Ejercicio 11
+      160:  126:toroide trasladar(toroide const &t, int f, int c){
+      160:  126-block  0
+      160:  127:    int largoCol = t.size(), largoFil = t[0].size();
+      160:  127-block  0
+      160:  128:    toroide out = t;
+        -:  129:
+      954:  130:    for(int i = 0 ; i < largoCol ; i++) {
+      954:  130-block  0
+      794:  130-block  1
+     4302:  131:        for(int j = 0 ; j < largoFil ; j++) {
+      794:  131-block  0
+     4302:  131-block  1
+     3508:  132:            out[i][j] = t[nuevaF(t,i+f)][nuevaC(t,j+c)];
+     3508:  132-block  0
+        -:  133:        }
+        -:  134:    }
+      160:  135:    return out;
+      160:  135-block  0
+        -:  136:}
+        -:  137:
+        -:  138://Ejercicio 12
+      122:  139:int buscarRectanguloMasChico(toroide const &t){
+      122:  139-block  0
+      122:  140:    int largoCol = t.size(), largoFil = t[0].size();
+      122:  140-block  0
+      122:  141:    int h = -1, b = largoCol, i = -1, d = largoFil;
+        -:  142:
+      122:  143:    bool buscador = false;      //busco el más alto
+      282:  144:    while(!buscador && h < largoCol){
+      282:  144-block  0
+      160:  144-block  1
+      160:  144-block  2
+      160:  145:        h++;
+      707:  146:        for(int j = 0 ; !buscador && j < largoFil ; j++) {
+      160:  146-block  0
+      707:  146-block  1
+      585:  146-block  2
+      547:  147:            buscador = t[h][j];
+      547:  147-block  0
+        -:  148:        }
+        -:  149:
+        -:  150:    }
+        -:  151:
+      122:  152:    buscador = false;           //busco el más bajo
+      122:  152-block  0
+      280:  153:    while(!buscador && b >=0){
+      280:  153-block  0
+      158:  153-block  1
+      158:  153-block  2
+      158:  154:        b--;
+      697:  155:        for(int j = largoFil-1 ; !buscador && j >= 0 ; j--) {
+      158:  155-block  0
+      697:  155-block  1
+      575:  155-block  2
+      539:  156:            buscador = t[b][j];
+      539:  156-block  0
+        -:  157:        }
+        -:  158:    }
+        -:  159:
+      122:  160:    buscador = false;           //busco el más a la izquierda
+      122:  160-block  0
+      358:  161:    while(!buscador && i < largoCol){
+      358:  161-block  0
+      248:  161-block  1
+      236:  161-block  2
+      236:  162:        i++;
+     1116:  163:        for(int j = 0 ; !buscador && j < largoCol ; j++) {
+      236:  163-block  0
+     1116:  163-block  1
+     1006:  163-block  2
+      880:  164:            buscador = t[j][i];
+      880:  164-block  0
+        -:  165:        }
+        -:  166:    }
+        -:  167:
+      122:  168:    buscador = false;           //busco el más a la derecha
+      122:  168-block  0
+      394:  169:    while(!buscador && d >=0){
+      394:  169-block  0
+      272:  169-block  1
+      272:  169-block  2
+      272:  170:        d--;
+     1243:  171:        for(int j = largoCol-1 ; !buscador && j >=0 ; j--) {
+      272:  171-block  0
+     1243:  171-block  1
+     1121:  171-block  2
+      971:  172:            buscador = t[j][d];
+      971:  172-block  0
+        -:  173:        }
+        -:  174:    }
+        -:  175:
+      122:  176:    return (b - h + 1)*(d - i + 1);
+      122:  176-block  0
+        -:  177:}

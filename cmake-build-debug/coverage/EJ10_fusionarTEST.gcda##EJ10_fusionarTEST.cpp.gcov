@@ -1,0 +1,325 @@
+        -:    0:Source:C:/Users/maria/Desktop/Taller/Algoritmos I/TPImplementacion/tests/EJ10_fusionarTEST.cpp
+        -:    0:Graph:C:\Users\maria\Desktop\Taller\Algoritmos I\TPImplementacion\cmake-build-debug\CMakeFiles\juegoDeLaVida.dir\tests\EJ10_fusionarTEST.gcno
+        -:    0:Data:C:\Users\maria\Desktop\Taller\Algoritmos I\TPImplementacion\cmake-build-debug\CMakeFiles\juegoDeLaVida.dir\tests\EJ10_fusionarTEST.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:#include "../ejercicios.h"
+        -:    2:#include "gtest/gtest.h"
+        -:    3:#include <algorithm>
+        -:    4:
+        -:    5:using namespace std;
+        -:    6:
+        8:    7:TEST(fusionarTEST, sinInterseccion){
+        1:    7-block  0
+        1:    7-block  1
+        1:    7-block  2
+    %%%%%:    7-block  3
+    %%%%%:    7-block  4
+    %%%%%:    7-block  5
+        1:    7-block  6
+        1:    7-block  7
+        1:    7-block  8
+        1:    7-block  9
+        1:    7-block 10
+        1:    7-block 11
+        1:    7-block 12
+        -:    8:    toroide t1 = { 
+        -:    9:                  {true, false, false},
+        -:   10:                  {false, true, false},
+        5:   11:                  {false, false, true}}; 
+        1:   11-block  0
+        1:   11-block  1
+        1:   11-block  2
+        1:   11-block  3
+        1:   11-block  4
+        4:   11-block  5
+        3:   11-block  6
+        1:   11-block  7
+    %%%%%:   11-block  8
+    %%%%%:   11-block  9
+    %%%%%:   11-block 10
+    %%%%%:   11-block 11
+    %%%%%:   11-block 12
+    %%%%%:   11-block 13
+    %%%%%:   11-block 14
+    %%%%%:   11-block 15
+    %%%%%:   11-block 16
+        -:   12:    toroide t2 = { 
+        -:   13:                  {false, true, true},
+        -:   14:                  {true, false, true},
+        5:   15:                  {true, true, false}};
+        1:   15-block  0
+        1:   15-block  1
+        1:   15-block  2
+        1:   15-block  3
+        4:   15-block  4
+        3:   15-block  5
+        1:   15-block  6
+    %%%%%:   15-block  7
+    %%%%%:   15-block  8
+    %%%%%:   15-block  9
+    %%%%%:   15-block 10
+    %%%%%:   15-block 11
+    %%%%%:   15-block 12
+    %%%%%:   15-block 13
+    %%%%%:   15-block 14
+    %%%%%:   15-block 15
+        -:   16:
+        -:   17:    toroide tout = {
+        -:   18:            {false, false, false},
+        -:   19:            {false, false, false},
+        5:   20:            {false, false, false}};
+        1:   20-block  0
+        1:   20-block  1
+        1:   20-block  2
+        1:   20-block  3
+        4:   20-block  4
+        3:   20-block  5
+        1:   20-block  6
+    %%%%%:   20-block  7
+    %%%%%:   20-block  8
+    %%%%%:   20-block  9
+    %%%%%:   20-block 10
+    %%%%%:   20-block 11
+    %%%%%:   20-block 12
+    %%%%%:   20-block 13
+    %%%%%:   20-block 14
+        -:   21:
+        2:   22:    toroide res = fusionar(t1, t2);
+    %%%%%:   22-block  0
+        1:   23:    EXPECT_EQ(res, tout);
+        1:   23-block  0
+        1:   23-block  1
+    $$$$$:   23-block  2
+    $$$$$:   23-block  3
+    $$$$$:   23-block  4
+    $$$$$:   23-block  5
+    $$$$$:   23-block  6
+        1:   23-block  7
+    %%%%%:   23-block  8
+    %%%%%:   23-block  9
+    %%%%%:   23-block 10
+    %%%%%:   23-block 11
+        1:   24:}
+    %%%%%:   24-block  0
+        -:   25:
+        8:   26:TEST(fusionarTEST, cincoPorCinco){
+        1:   26-block  0
+        1:   26-block  1
+        1:   26-block  2
+    %%%%%:   26-block  3
+    %%%%%:   26-block  4
+    %%%%%:   26-block  5
+        1:   26-block  6
+        1:   26-block  7
+        1:   26-block  8
+        1:   26-block  9
+        1:   26-block 10
+        1:   26-block 11
+        1:   26-block 12
+        -:   27:    toroide t1 = {
+        -:   28:            {true,  false, true,  true,  true },
+        -:   29:            {true,  true,  false, true,  false},
+        -:   30:            {false, false, true,  false, false},
+        -:   31:            {false, true,  false, true,  true },
+        7:   32:            {true,  true,  false, false, true },};
+        1:   32-block  0
+        1:   32-block  1
+        1:   32-block  2
+        1:   32-block  3
+        1:   32-block  4
+        1:   32-block  5
+        1:   32-block  6
+        6:   32-block  7
+        5:   32-block  8
+        1:   32-block  9
+    %%%%%:   32-block 10
+    %%%%%:   32-block 11
+    %%%%%:   32-block 12
+    %%%%%:   32-block 13
+    %%%%%:   32-block 14
+    %%%%%:   32-block 15
+    %%%%%:   32-block 16
+    %%%%%:   32-block 17
+    %%%%%:   32-block 18
+    %%%%%:   32-block 19
+    %%%%%:   32-block 20
+        -:   33:    toroide t2 = {
+        -:   34:            {false, true, false, true, false},
+        -:   35:            {true,  true, false, true, true },
+        -:   36:            {false, true, false, true, false},
+        -:   37:            {true,  true, false, true, true },
+        7:   38:            {false, true, true,  true, false},};
+        1:   38-block  0
+        1:   38-block  1
+        1:   38-block  2
+        1:   38-block  3
+        1:   38-block  4
+        1:   38-block  5
+        6:   38-block  6
+        5:   38-block  7
+        1:   38-block  8
+    %%%%%:   38-block  9
+    %%%%%:   38-block 10
+    %%%%%:   38-block 11
+    %%%%%:   38-block 12
+    %%%%%:   38-block 13
+    %%%%%:   38-block 14
+    %%%%%:   38-block 15
+    %%%%%:   38-block 16
+    %%%%%:   38-block 17
+    %%%%%:   38-block 18
+    %%%%%:   38-block 19
+        -:   39:
+        -:   40:    toroide tout = {
+        -:   41:            {false, false, false, true,  false},
+        -:   42:            {true,  true,  false, true,  false},
+        -:   43:            {false, false, false, false, false},
+        -:   44:            {false, true,  false, true,  true },
+        7:   45:            {false, true,  false, false, false},};
+        1:   45-block  0
+        1:   45-block  1
+        1:   45-block  2
+        1:   45-block  3
+        1:   45-block  4
+        1:   45-block  5
+        6:   45-block  6
+        5:   45-block  7
+        1:   45-block  8
+    %%%%%:   45-block  9
+    %%%%%:   45-block 10
+    %%%%%:   45-block 11
+    %%%%%:   45-block 12
+    %%%%%:   45-block 13
+    %%%%%:   45-block 14
+    %%%%%:   45-block 15
+    %%%%%:   45-block 16
+    %%%%%:   45-block 17
+    %%%%%:   45-block 18
+        -:   46:
+        2:   47:    toroide res = fusionar(t1, t2);
+    %%%%%:   47-block  0
+        1:   48:    EXPECT_EQ(res, tout);
+        1:   48-block  0
+        1:   48-block  1
+    $$$$$:   48-block  2
+    $$$$$:   48-block  3
+    $$$$$:   48-block  4
+    $$$$$:   48-block  5
+    $$$$$:   48-block  6
+        1:   48-block  7
+    %%%%%:   48-block  8
+    %%%%%:   48-block  9
+    %%%%%:   48-block 10
+    %%%%%:   48-block 11
+        1:   49:}
+    %%%%%:   49-block  0
+        -:   50:
+        8:   51:TEST(fusionarTEST, cruzLarga){
+        1:   51-block  0
+        1:   51-block  1
+        1:   51-block  2
+    %%%%%:   51-block  3
+    %%%%%:   51-block  4
+    %%%%%:   51-block  5
+        1:   51-block  6
+        1:   51-block  7
+        1:   51-block  8
+        1:   51-block  9
+        1:   51-block 10
+        1:   51-block 11
+        1:   51-block 12
+        -:   52:    toroide t1 = {
+        -:   53:            {true,  false, false, false, false, false, false},
+        -:   54:            {false, true,  true,  true,  false, false, false},
+        -:   55:            {false, false, false, true,  true,  true,  false},
+        6:   56:            {false, false, false, false, false, false, true }};
+        1:   56-block  0
+        1:   56-block  1
+        1:   56-block  2
+        1:   56-block  3
+        1:   56-block  4
+        1:   56-block  5
+        5:   56-block  6
+        4:   56-block  7
+        1:   56-block  8
+    %%%%%:   56-block  9
+    %%%%%:   56-block 10
+    %%%%%:   56-block 11
+    %%%%%:   56-block 12
+    %%%%%:   56-block 13
+    %%%%%:   56-block 14
+    %%%%%:   56-block 15
+    %%%%%:   56-block 16
+    %%%%%:   56-block 17
+    %%%%%:   56-block 18
+        -:   57:    toroide t2 = {
+        -:   58:            {false, false, false, false, false, false, true},
+        -:   59:            {false, false, false, true,  true,  true,  false},
+        -:   60:            {false, true,  true,  true,  false, false, false},
+        6:   61:            {true,  false, false, false, false, false, false}};
+        1:   61-block  0
+        1:   61-block  1
+        1:   61-block  2
+        1:   61-block  3
+        1:   61-block  4
+        5:   61-block  5
+        4:   61-block  6
+        1:   61-block  7
+    %%%%%:   61-block  8
+    %%%%%:   61-block  9
+    %%%%%:   61-block 10
+    %%%%%:   61-block 11
+    %%%%%:   61-block 12
+    %%%%%:   61-block 13
+    %%%%%:   61-block 14
+    %%%%%:   61-block 15
+    %%%%%:   61-block 16
+    %%%%%:   61-block 17
+        -:   62:
+        -:   63:    toroide tout = {
+        -:   64:            {false, false, false, false, false, false, false},
+        -:   65:            {false, false, false, true,  false, false, false},
+        -:   66:            {false, false, false, true,  false, false, false},
+        6:   67:            {false, false, false, false, false, false, false}};
+        1:   67-block  0
+        1:   67-block  1
+        1:   67-block  2
+        1:   67-block  3
+        1:   67-block  4
+        5:   67-block  5
+        4:   67-block  6
+        1:   67-block  7
+    %%%%%:   67-block  8
+    %%%%%:   67-block  9
+    %%%%%:   67-block 10
+    %%%%%:   67-block 11
+    %%%%%:   67-block 12
+    %%%%%:   67-block 13
+    %%%%%:   67-block 14
+    %%%%%:   67-block 15
+    %%%%%:   67-block 16
+        -:   68:
+        2:   69:    toroide res = fusionar(t1, t2);
+    %%%%%:   69-block  0
+        1:   70:    EXPECT_EQ(res, tout);
+        1:   70-block  0
+        1:   70-block  1
+    $$$$$:   70-block  2
+    $$$$$:   70-block  3
+    $$$$$:   70-block  4
+    $$$$$:   70-block  5
+    $$$$$:   70-block  6
+        1:   70-block  7
+    %%%%%:   70-block  8
+    %%%%%:   70-block  9
+    %%%%%:   70-block 10
+    %%%%%:   70-block 11
+        5:   71:}
+        1:   71-block  0
+        1:   71-block  1
+        1:   71-block  2
+        1:   71-block  3
+        1:   71-block  4
+        1:   71-block  5
+    %%%%%:   71-block  6

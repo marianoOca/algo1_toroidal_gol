@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/maria/Desktop/Taller/Algoritmos I/TPImplementacion/auxiliares.h
+definiciones.h
+C:/Users/maria/Desktop/Taller/Algoritmos I/TPImplementacion/definiciones.h
+
+C:/Users/maria/Desktop/Taller/Algoritmos I/TPImplementacion/definiciones.h
+vector
+-
+cmath
+-
+algorithm
+-
+
+C:/Users/maria/Desktop/Taller/Algoritmos I/TPImplementacion/ejercicios.cpp
+algorithm
+-
+ejercicios.h
+C:/Users/maria/Desktop/Taller/Algoritmos I/TPImplementacion/ejercicios.h
+auxiliares.h
+C:/Users/maria/Desktop/Taller/Algoritmos I/TPImplementacion/auxiliares.h
+
+C:/Users/maria/Desktop/Taller/Algoritmos I/TPImplementacion/ejercicios.h
+definiciones.h
+C:/Users/maria/Desktop/Taller/Algoritmos I/TPImplementacion/definiciones.h
+
